@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To My Wife, Pragya ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+*{box-sizing:border-box} 
+body{margin:0;min-height:100vh;font-family:Poppins,sans-serif;color:#fff;overflow-x:hidden;background:radial-gradient(circle at 20% 20%,#6e3158 0,#24152e 35%,#090912 100%);transition:background 1.5s}
+body.birthday{background:radial-gradient(circle at 50% 20%,#8c426e 0,#30172f 38%,#090912 100%)}
+.bg-heart{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.heart{position:absolute;bottom:-50px;font-size:18px;opacity:.35;animation:float linear infinite}
+@keyframes float{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.container{position:relative;z-index:2;max-width:950px;margin:auto;padding:48px 22px 80px;text-align:center}
+.badge{display:inline-block;padding:8px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+h1,h2,h3{font-family:"Cormorant Garamond",serif} 
+h1{font-size:clamp(52px,11vw,110px);line-height:.9;margin:25px 0 15px;font-weight:600}
+.subtitle{font-size:clamp(16px,3vw,21px);opacity:.9;max-width:700px;margin:auto;line-height:1.7;font-weight:300}
+.countdown{display:flex;justify-content:center;gap:14px;margin:40px auto 35px;flex-wrap:wrap}
+.time{min-width:105px;padding:20px 14px;border-radius:22px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+.time strong{display:block;font-size:38px;font-weight:500}.time span{font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.65}
+.card{margin:35px auto;padding:36px 28px;max-width:750px;border-radius:30px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(15px);box-shadow:0 20px 70px rgba(0,0,0,.25)}
+.card h2{font-size:36px;margin:0 0 12px}.card p{line-height:1.8;opacity:.88}
+
+/* 3D Photo Slideshow Styles */
+.gallery-card{position:relative;overflow:hidden}
+.gallery-subtitle{font-size:14px;letter-spacing:1px;text-transform:uppercase;opacity:0.75;margin-bottom:25px;color:#f6c76b}
+.carousel-container{position:relative;width:100%;max-width:680px;height:380px;margin:20px auto 10px;perspective:1000px;display:flex;justify-content:center;align-items:center}
+.carousel-track{position:relative;width:100%;height:100%;transform-style:preserve-3d}
+.slide{position:absolute;width:260px;height:340px;left:calc(50% - 130px);top:calc(50% - 170px);border-radius:20px;overflow:hidden;box-shadow:0 15px 35px rgba(0,0,0,0.5);transition:all 0.6s cubic-bezier(0.25, 1, 0.5, 1);cursor:pointer;border:2px solid rgba(255,255,255,0.25);background:#1a0f24}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slide-caption{position:absolute;bottom:0;left:0;right:0;padding:20px 15px 12px;background:linear-gradient(transparent, rgba(15,8,22,0.95));font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,0.6);opacity:0;transition:opacity 0.4s}
+.slide.active .slide-caption{opacity:1}
+
+/* 3D Deck Stacking Positioning */
+.slide[data-pos="0"]{transform:translateX(0) translateZ(0) scale(1);z-index:5;opacity:1;border-color:rgba(246,199,107,0.7);box-shadow:0 20px 40px rgba(246,199,107,0.25)}
+.slide[data-pos="1"]{transform:translateX(140px) translateZ(-120px) rotateY(-15deg) scale(0.85);z-index:4;opacity:0.8}
+.slide[data-pos="2"]{transform:translateX(240px) translateZ(-220px) rotateY(-25deg) scale(0.7);z-index:3;opacity:0.4}
+.slide[data-pos="-1"]{transform:translateX(-140px) translateZ(-120px) rotateY(15deg) scale(0.85);z-index:4;opacity:0.8}
+.slide[data-pos="-2"]{transform:translateX(-240px) translateZ(-220px) rotateY(25deg) scale(0.7);z-index:3;opacity:0.4}
+
+.carousel-nav{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:15px}
+.nav-btn{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all 0.3s;backdrop-filter:blur(8px)}
+.nav-btn:hover{background:rgba(246,199,107,0.8);color:#24152e;transform:scale(1.1)}
+.dots-indicator{display:flex;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.3);cursor:pointer;transition:all 0.3s}
+.dot.active{background:#f6c76b;transform:scale(1.3);width:22px;border-radius:10px}
+
+.locked{filter:none}.gift-wrap{margin:25px auto 10px;width:190px;height:180px;position:relative;cursor:not-allowed}.gift{position:absolute;left:25px;top:55px;width:140px;height:105px;background:linear-gradient(135deg,#d94f78,#a52655);border-radius:8px;box-shadow:0 18px 30px rgba(0,0,0,.3);transition:.5s}.gift:before{content:"";position:absolute;left:57px;top:0;width:27px;height:105px;background:#f6c76b}.lid{position:absolute;left:18px;top:42px;width:154px;height:34px;background:#e15c83;border-radius:7px;z-index:2;transition:.5s}.lid:before{content:"";position:absolute;left:63px;top:0;width:27px;height:34px;background:#f6c76b}.ribbon{position:absolute;left:57px;top:20px;width:28px;height:42px;border:5px solid #f6c76b;border-bottom:0;border-radius:20px 20px 0 0;transform:rotate(-15deg)}.ribbon.r{left:75px;transform:rotate(15deg)}.lock{position:absolute;z-index:4;left:76px;top:79px;font-size:25px;text-shadow:0 3px 8px #000}.hint{font-size:13px;opacity:.6}
+.open-btn{border:0;padding:15px 30px;border-radius:999px;background:#f6c76b;color:#321628;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 10px 30px rgba(246,199,107,.2);transition:.25s}.open-btn:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(246,199,107,.35)}
+.hidden{display:none}.reveal{animation:reveal .8s ease forwards}@keyframes reveal{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.message{font-family:"Cormorant Garamond",serif;font-size:26px;line-height:1.45;text-align:left}.signature{margin-top:25px;font-family:"Cormorant Garamond",serif;font-size:28px;text-align:right}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+.footer{margin-top:55px;font-size:12px;opacity:.5}
+#birthdayHero{margin-top:15px}
+.sparkle{font-size:28px;display:inline-block;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.25)}}
+
+/* Test Button Styles */
+.test-btn{position:fixed;bottom:18px;right:18px;z-index:99;padding:9px 16px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:30px;font-size:12px;cursor:pointer;backdrop-filter:blur(10px);transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+.test-btn:hover{background:#f6c76b;color:#24152e;font-weight:600}
+
+@media(max-width:600px){
+  .carousel-container{height:300px}
+  .slide{width:200px;height:260px;left:calc(50% - 100px);top:calc(50% - 130px)}
+  .slide[data-pos="1"]{transform:translateX(80px) translateZ(-100px) rotateY(-15deg) scale(0.85)}
+  .slide[data-pos="2"]{transform:translateX(130px) translateZ(-180px) rotateY(-25deg) scale(0.7)}
+  .slide[data-pos="-1"]{transform:translateX(-80px) translateZ(-100px) rotateY(15deg) scale(0.85)}
+  .slide[data-pos="-2"]{transform:translateX(-130px) translateZ(-180px) rotateY(25deg) scale(0.7)}
+}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div class="bg-heart" id="hearts"></div>
+
+<main class="container">
+  <div class="badge">To My Dearest Wife ❤</div>
+
+  <section id="countdownSection">
+    <h1>Pragya</h1>
+    <p class="subtitle">Your first birthday as my wife is almost here…<br>and I am counting down every single second until I get to celebrate you. ✨</p>
+    <div class="countdown">
+      <div class="time"><strong id="days">00</strong><span>Days</span></div>
+      <div class="time"><strong id="hours">00</strong><span>Hours</span></div>
+      <div class="time"><strong id="minutes">00</strong><span>Minutes</span></div>
+      <div class="time"><strong id="seconds">00</strong><span>Seconds</span></div>
+    </div>
+    
+    <div class="card">
+      <h2>Counting Down To Your Moment 🌙</h2>
+      <p>This is your very first birthday since we took our seven vows together. Until the clock hits midnight, this page is holding a special secret waiting just for you.</p>
+    </div>
+  </section>
+
+  <section id="birthdayHero" class="hidden">
+    <div class="sparkle">✨ ❤ ✨</div>
+    <h1>Happy Birthday,<br>My Love</h1>
+    <p class="subtitle">Today isn't just another date on the calendar.<br>It's the day the world got a little more beautiful. ❤</p>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section class="card gallery-card">
+    <h2>Our Magical Journey ✨</h2>
+    <div class="gallery-subtitle">A few of my favorite memories with you</div>
+    
+    <div class="carousel-container" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Dynamic Photo Slides will be injected here -->
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="nav-btn" id="prevBtn" aria-label="Previous photo">❮</button>
+      <div class="dots-indicator" id="dotsContainer"></div>
+      <button class="nav-btn" id="nextBtn" aria-label="Next photo">❯</button>
+    </div>
+  </section>
+
+  <section class="card" id="giftCard">
+    <h2 id="giftTitle">Your Birthday Surprise 🎁</h2>
+    <p id="giftIntro">This romantic gift box is locked tight with one rule:</p>
+    <div class="gift-wrap" id="giftWrap" aria-label="Locked birthday gift">
+      <div class="gift"></div><div class="lid"></div><div class="ribbon"></div><div class="ribbon r"></div><div class="lock" id="lock">🔒</div>
+    </div>
+    <p class="hint" id="giftHint">It unlocks automatically when the countdown reaches zero.</p>
+    <button class="open-btn hidden" id="openGift">Open your birthday gift, my love 💝</button>
+
+    <div id="giftMessage" class="hidden reveal">
+      <p class="message">
+        To My Love,<br><br>
+        Three months of marriage with you, and I already know this is just the tiny beginning of a beautiful forever. Waking up next to you and building our home together is a dream I never want to wake up from.<br><br>
+        Happy Birthday, my love! Here's to your very first birthday as my wife, and to an eternity of loving you endlessly. ❤️
+      </p>
+      <div class="signature">Forever yours,<br>GJ ❤️</div>
+    </div>
+  </section>
+
+  <div class="footer">Created with love by Tanmay for Pragya • 4 October 💕</div>
+</main>
+
+<!-- Quick Test Button for Testing Birthday Trigger Mode -->
+<button class="test-btn" id="testModeBtn" title="Simulate countdown hitting zero">⚡ Test Birthday Mode</button>
+
+<script>
+const TARGET_MONTH = 9; // October (0 = January)
+const TARGET_DAY = 4;
+let isTestingMode = false;
+
+function targetDateIST(){
+  const now = new Date();
+  let year = now.getUTCFullYear();
+  let target = new Date(Date.UTC(year,TARGET_MONTH,TARGET_DAY,0,0,0));
+  target = new Date(Date.UTC(year,TARGET_MONTH,TARGET_DAY-1,18,30,0));
+  if(now.getTime() >= target.getTime()){
+    year++;
+    target = new Date(Date.UTC(year,TARGET_MONTH,TARGET_DAY-1,18,30,0));
+  }
+  return target;
+}
+let target = targetDateIST();
+
+function pad(n){return String(Math.max(0,n)).padStart(2,'0')}
+function update(){
+  if(isTestingMode) return;
+  const now = new Date();
+  let diff = target-now;
+  if(diff<=0){ birthdayMode(); return; }
+  const s=Math.floor(diff/1000);
+  document.getElementById('days').textContent=pad(Math.floor(s/86400));
+  document.getElementById('hours').textContent=pad(Math.floor(s%86400/3600));
+  document.getElementById('minutes').textContent=pad(Math.floor(s%3600/60));
+  document.getElementById('seconds').textContent=pad(s%60);
+}
+function birthdayMode(){
+  document.body.classList.add('birthday');
+  document.getElementById('countdownSection').classList.add('hidden');
+  document.getElementById('birthdayHero').classList.remove('hidden');
+  document.getElementById('lock').textContent='✨';
+  document.getElementById('giftHint').textContent='The countdown is over! Your birthday surprise is ready, my wife. ❤️';
+  document.getElementById('openGift').classList.remove('hidden');
+  document.getElementById('giftWrap').style.cursor='pointer';
+  document.getElementById('openGift').onclick=openGift;
+  if(!window.done){window.done=true; launchConfetti();}
+}
+function openGift(){
+  document.getElementById('giftWrap').style.transform='scale(1.05)';
+  document.querySelector('.lid').style.transform='translateY(-45px) rotate(-8deg)';
+  document.getElementById('lock').style.display='none';
+  setTimeout(()=>{
+    document.getElementById('giftMessage').classList.remove('hidden');
+    document.getElementById('openGift').classList.add('hidden');
+    document.getElementById('giftTitle').textContent='To My Wife, Pragya ❤️';
+    document.getElementById('giftIntro').textContent='';
+  },450);
+}
+document.getElementById('giftWrap').onclick=()=>{if(!document.getElementById('openGift').classList.contains('hidden'))openGift()};
+
+/* Testing Button Logic */
+document.getElementById('testModeBtn').onclick = () => {
+  isTestingMode = true;
+  document.getElementById('days').textContent = '00';
+  document.getElementById('hours').textContent = '00';
+  document.getElementById('minutes').textContent = '00';
+  document.getElementById('seconds').textContent = '00';
+  birthdayMode();
+};
+
+/* Explicit Image Filenames mapped with exact caption pairings */
+const galleryData = [
+  {
+    filename: "photo_2026-10-02_12-26-00.jpg",
+    caption: "Where our story began ❤️"
+  },
+  {
+    filename: "photo_2026-10-02_12-25-56.jpg",
+    caption: "My favorite place is next to you 💕"
+  },
+  {
+    filename: "photo_2026-10-02_12-25-54.jpg",
+    caption: "Every smile of yours brightens my world ✨"
+  },
+  {
+    filename: "photo_2026-10-02_12-25-51.jpg",
+    caption: "Stealing my heart in every shade of red 🌹"
+  },
+  {
+    filename: "photo_2026-09-30_00-49-50.jpg",
+    caption: "To endless memories together 🥂"
+  }
+];
+
+const fallbackImages = [
+  'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=600&q=80'
+];
+
+// Generates candidate filenames to load images dynamically and reliably
+function candidateUrlsForSlot(index) {
+  const i = index + 1;
+  const exts = ['jpg', 'jpeg', 'png', 'webp', 'JPG'];
+  const genericPrefixes = [`photo${i}`, `image${i}`, `img${i}`, `pic${i}`, `${i}`];
+  
+  let candidates = [];
+  
+  // Primary target image
+  if (galleryData[index] && galleryData[index].filename) {
+    candidates.push(`images/${galleryData[index].filename}`);
+  }
+  
+  // Generic fallbacks
+  genericPrefixes.forEach(p => exts.forEach(ext => candidates.push(`images/${p}.${ext}`)));
+  
+  return candidates;
+}
+
+// Tests image availability asynchronously
+function findValidImage(candidateList, fallbackUrl) {
+  return new Promise((resolve) => {
+    let index = 0;
+    function tryNext() {
+      if (index >= candidateList.length) {
+        resolve(fallbackUrl);
+        return;
+      }
+      const img = new Image();
+      img.onload = () => resolve(candidateList[index]);
+      img.onerror = () => { index++; tryNext(); };
+      img.src = candidateList[index];
+    }
+    tryNext();
+  });
+}
+
+let currentSlide = 0;
+let totalSlides = galleryData.length;
+let slides = [];
+let dots = [];
+let autoInterval;
+
+async function initCarousel() {
+  const track = document.getElementById('carouselTrack');
+  const dotsContainer = document.getElementById('dotsContainer');
+  track.innerHTML = '';
+  dotsContainer.innerHTML = '';
+
+  for (let i = 0; i < galleryData.length; i++) {
+    const candidates = candidateUrlsForSlot(i);
+    const validSrc = await findValidImage(candidates, fallbackImages[i]);
+
+    const slideEl = document.createElement('div');
+    slideEl.className = 'slide';
+    slideEl.setAttribute('data-index', i);
+    slideEl.innerHTML = `
+      <img src="${validSrc}" alt="Memory ${i + 1}">
+      <div class="slide-caption">${galleryData[i].caption}</div>
+    `;
+    track.appendChild(slideEl);
+
+    const dot = document.createElement('div');
+    dot.className = `dot ${i === 0 ? 'active' : ''}`;
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+  }
+
+  slides = document.querySelectorAll('.slide');
+  dots = document.querySelectorAll('.dot');
+  totalSlides = slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.onclick = () => { goToSlide(i); resetAutoplay(); };
+  });
+
+  updateCarousel();
+  autoInterval = setInterval(nextSlide, 4000);
+}
+
+function updateCarousel() {
+  if (!slides.length) return;
+  slides.forEach((slide, i) => {
+    let offset = i - currentSlide;
+    if (offset > 2) offset -= totalSlides;
+    if (offset < -2) offset += totalSlides;
+
+    slide.setAttribute('data-pos', offset);
+    slide.classList.toggle('active', offset === 0);
+  });
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlide);
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+document.getElementById('nextBtn').onclick = () => { nextSlide(); resetAutoplay(); };
+document.getElementById('prevBtn').onclick = () => { prevSlide(); resetAutoplay(); };
+
+function resetAutoplay() {
+  clearInterval(autoInterval);
+  autoInterval = setInterval(nextSlide, 4000);
+}
+
+// Touch/Swipe Support
+let touchStartX = 0;
+const carouselEl = document.getElementById('carousel');
+carouselEl.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+carouselEl.addEventListener('touchend', e => {
+  let touchEndX = e.changedTouches[0].screenX;
+  if (touchStartX - touchEndX > 40) { nextSlide(); resetAutoplay(); }
+  if (touchEndX - touchStartX > 40) { prevSlide(); resetAutoplay(); }
+}, {passive: true});
+
+initCarousel();
+
+for(let i=0;i<22;i++){
+ const h=document.createElement('div');h.className='heart';h.textContent=['♥','♡','✦'][i%3];
+ h.style.left=(Math.random()*100)+'%';h.style.animationDuration=(8+Math.random()*10)+'s';h.style.animationDelay=(-Math.random()*15)+'s';h.style.fontSize=(12+Math.random()*20)+'px';document.getElementById('hearts').appendChild(h);
+}
+function launchConfetti(){
+ const c=document.getElementById('confetti'),ctx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+ const pieces=Array.from({length:180},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height,w:4+Math.random()*7,h:7+Math.random()*10,v:2+Math.random()*5,r:Math.random()*6.28,vr:(Math.random()-.5)*.2}));
+ let start=performance.now();
+ function frame(t){
+   ctx.clearRect(0,0,c.width,c.height);
+   pieces.forEach(p=>{p.y+=p.v;p.r+=p.vr;p.x+=Math.sin(p.y/45);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=.85;ctx.fillStyle=['#f6c76b','#ff7198','#ffffff','#c8a7ff'][Math.floor(Math.random()*4)];ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});
+   if(t-start<9000)requestAnimationFrame(frame); else ctx.clearRect(0,0,c.width,c.height);
+ } requestAnimationFrame(frame);
+}
+update();setInterval(update,250);
+window.addEventListener('resize',()=>{const c=document.getElementById('confetti');c.width=innerWidth;c.height=innerHeight});
+</script>
+</body>
+</html>
