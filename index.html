@@ -13,6 +13,7 @@ body.birthday{background:radial-gradient(circle at 50% 20%,#8c426e 0,#30172f 38%
 @keyframes float{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
 .container{position:relative;z-index:2;max-width:950px;margin:auto;padding:48px 22px 80px;text-align:center}
 .badge{display:inline-block;padding:8px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(255,255,255,.08);backdrop-filter:blur(8px);font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.badge .red-heart{color:#ff4d6d}
 h1,h2,h3{font-family:"Cormorant Garamond",serif} 
 h1{font-size:clamp(52px,11vw,110px);line-height:.9;margin:25px 0 15px;font-weight:600}
 .subtitle{font-size:clamp(16px,3vw,21px);opacity:.9;max-width:700px;margin:auto;line-height:1.7;font-weight:300}
@@ -74,7 +75,7 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
 <div class="bg-heart" id="hearts"></div>
 
 <main class="container">
-  <div class="badge">To My Dearest Wife ❤</div>
+  <div class="badge">To My Dearest Wife <span class="red-heart">❤</span></div>
 
   <section id="countdownSection">
     <h1>Pragya</h1>
