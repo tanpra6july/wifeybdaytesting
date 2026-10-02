@@ -56,10 +56,6 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
 #birthdayHero{margin-top:15px}
 .sparkle{font-size:28px;display:inline-block;animation:pulse 1.5s infinite}@keyframes pulse{50%{transform:scale(1.25)}}
 
-/* Test Button Styles */
-.test-btn{position:fixed;bottom:18px;right:18px;z-index:99;padding:9px 16px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:#fff;border-radius:30px;font-size:12px;cursor:pointer;backdrop-filter:blur(10px);transition:all 0.3s;box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-.test-btn:hover{background:#f6c76b;color:#24152e;font-weight:600}
-
 @media(max-width:600px){
   .carousel-container{height:300px}
   .slide{width:200px;height:260px;left:calc(50% - 100px);top:calc(50% - 130px)}
@@ -139,13 +135,9 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
   <div class="footer">Created with love by Tanmay for Pragya • 4 October 💕</div>
 </main>
 
-<!-- Quick Test Button for Testing Birthday Trigger Mode -->
-<button class="test-btn" id="testModeBtn" title="Simulate countdown hitting zero">⚡ Test Birthday Mode</button>
-
 <script>
 const TARGET_MONTH = 9; // October (0 = January)
 const TARGET_DAY = 4;
-let isTestingMode = false;
 
 function targetDateIST(){
   const now = new Date();
@@ -162,7 +154,6 @@ let target = targetDateIST();
 
 function pad(n){return String(Math.max(0,n)).padStart(2,'0')}
 function update(){
-  if(isTestingMode) return;
   const now = new Date();
   let diff = target-now;
   if(diff<=0){ birthdayMode(); return; }
@@ -195,16 +186,6 @@ function openGift(){
   },450);
 }
 document.getElementById('giftWrap').onclick=()=>{if(!document.getElementById('openGift').classList.contains('hidden'))openGift()};
-
-/* Testing Button Logic */
-document.getElementById('testModeBtn').onclick = () => {
-  isTestingMode = true;
-  document.getElementById('days').textContent = '00';
-  document.getElementById('hours').textContent = '00';
-  document.getElementById('minutes').textContent = '00';
-  document.getElementById('seconds').textContent = '00';
-  birthdayMode();
-};
 
 /* Explicit Image Filenames mapped with exact caption pairings */
 const galleryData = [
